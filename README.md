@@ -333,15 +333,8 @@ git push <远程仓库简称> <本地分支名>
 git push (-u) origin master
 ```
 
+![image-20251120032256263](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120032256263.png)
 
 
 
-
-
-
-
-
-
-
-
-
+![image-20251120032441100](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120032441100.png)
