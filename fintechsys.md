@@ -251,6 +251,8 @@ git checkout master
 git merge branch01
 ```
 
+![image-20251120024215091](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120024215091.png)
+
 变基合并（Rebase + Merge）历史更整洁。效果：提交历史变成一条直线，没有分叉。
 
 ```
@@ -269,7 +271,9 @@ c. 删除分支：
 git branch -d branch01
 ```
 
+![image-20251120024245351](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120024245351.png)
 
+![image-20251120024434362](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120024434362.png)
 
 #### 4、远程仓库
 
@@ -288,20 +292,46 @@ git branch -d branch01
 有了想要的远程仓库，可以开始关联了
 
 ```
-git remote add origin 你的远程仓库的链接.git
-# 示例
+git remote add <想把这个远程仓库叫什么名字> <你的远程仓库的链接>.git
+
+# 示例，默认是自己的远程仓库origin，想关联别人的仓库再另外起名字
+
 git remote add origin https://github.com/xiaodaiameng/fintechsys.git
 ```
 
+![image-20251120025805343](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120025805343.png)
 
+##### 3）拉取远程仓库的分支
+
+a. **把你当前所在的本地分支** 与 **远程的分支** 进行合并。（如有冲突会报告的。）
+
+```
+git pull 远程仓库简称 分支名称
+```
+
+| `git pull origin main`            | 从 `origin`仓库拉取 `main` 分支的更新。         |
+| --------------------------------- | ----------------------------------------------- |
+| `git pull upstream develop`       | 从 `upstream`仓库 拉取 `develop` 分支的更新。   |
+| `git pull origin feature/payment` | 从 `origin` 拉取 `feature/payment` 分支的更新。 |
 
 学弟的友情提示：
 
 ![image-20251120010705826](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120010705826.png)
 
+b. 有 fetch，更保险一点。
 
+![image-20251120030652820](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120030652820.png)
 
+##### 4）从本地推送到远程仓库
 
+```
+git push <远程仓库简称> <本地分支名>
+```
+
+```
+# 示例：
+git push (-u) origin master
+```
 
 
 
