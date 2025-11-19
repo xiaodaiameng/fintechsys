@@ -141,7 +141,15 @@ git show c744c63:fintechsys.md
 
 ==按q回家==，不然出不来了。
 
-c. 还可以用对比模式看：
+c. 还有
+
+```
+git show <提交哈希> 子文件夹名/文件名
+# 示例：
+git show 596cd52 littleTest/helloGit.py
+```
+
+还可以用对比模式看：
 
 示例：对比 哈希号为c744c63的版本的 fintechsys.md与现在的 fintechsys.md，不管有没有在暂存区，直接被拿来对比了。
 
@@ -199,11 +207,66 @@ git checkout -b NAME
 git checkout -b branch01
 ```
 
+![image-20251120021046627](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120021046627.png)
+
 现在你就在一个新分支上了，任意修改和提交。
 
+比如我py文件里面本来是：
+
+![image-20251120021140359](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120021140359.png)
+
+现在改成：
+
+![image-20251120021236178](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120021236178.png)
+
+然后提交
+
+![image-20251120021406314](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120021406314.png)
+
+回到 master 分支：又能看到原始文件，比如想看helloGit.py
+
 ```
-# 回到 master 分支：又能看到原始文件
+git show 596cd52 littleTest/helloGit.py
+```
+
+![image-20251120022449895](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120022449895.png)
+
+##### 6）分支内的回滚、分支的合并、分支的删除
+
+a. 回滚：完全回到某次提交的状态，丢弃所有后续更改。
+
+注意这是分支内的操作，别的分支毫无变化。
+
+```
+git reset --hard <哈希号>
+```
+
+b.分支合并：
+
+```
+# 1. 切换到你要合并到的目标分支（通常是主分支）
 git checkout master
+
+# 2. 执行合并，把特性分支合并过来
+git merge branch01
+```
+
+变基合并（Rebase + Merge）历史更整洁。效果：提交历史变成一条直线，没有分叉。
+
+```
+# 1. 在特性分支上，将提交"重新播放"到master前面
+git checkout branch01
+git rebase master
+
+# 2. 切换回master并快速合并
+git checkout master
+git merge branch01
+```
+
+c. 删除分支：
+
+```
+git branch -d branch01
 ```
 
 
