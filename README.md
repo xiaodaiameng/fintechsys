@@ -24,11 +24,11 @@ https://git-scm.com/install/
 
 几乎都是next，一些可以看个人来改，比如下图。
 
-![image-20251119210452021](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251119210452021.png)
+![image-20251119210452021](images/image-20251119210452021.png)
 
 安装成功后可见：
 
-![image-20251119211916581](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251119211916581.png)
+![image-20251119211916581](images/image-20251119211916581.png)
 
 #### 2、配置
 
@@ -43,7 +43,7 @@ git config --global user.email "你的邮箱@example.com"
 
 查看所有配置的命令：git config --list
 
-![image-20251119232019742](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251119232019742.png)
+![image-20251119232019742](images/image-20251119232019742.png)
 
 #### 3、使用！！！
 
@@ -55,7 +55,7 @@ git config --global user.email "你的邮箱@example.com"
 git init
 ```
 
-![image-20251119232947801](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251119232947801.png)
+![image-20251119232947801](images/image-20251119232947801.png)
 
 项目根目录下的  .git 隐藏文件夹 就是 Git 的“魔法后台”：它存储了将来这个文件夹下以后新建的文件夹的所有历史版本。
 
@@ -67,7 +67,7 @@ git add 文件名
 
 a. 比如添加一个md文件：
 
-![image-20251119233009884](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251119233009884.png)
+![image-20251119233009884](images/image-20251119233009884.png)
 
 就是把这个文件放到暂存区了！
 
@@ -81,7 +81,7 @@ git add .
 
 Git 的 `git add .` 只对**当时文件夹里已经存在**的文件有效。如果是在执行 `git add .` 之后才把文件拖进来的，那么需要重新执行一次。
 
-![image-20251119233144423](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251119233144423.png)
+![image-20251119233144423](images/image-20251119233144423.png)
 
 c. 交互式添加，git 会逐个显示每个变化块，问你是否要添加到暂存区。
 
@@ -103,7 +103,7 @@ git restore --staged 不想提交的文件名
 git commit -m "暂存区里的东西现在提交上去，这是本次提交的描述信息。"
 ```
 
-![image-20251119233422982](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251119233422982.png)
+![image-20251119233422982](images/image-20251119233422982.png)
 
 ==嘎嘣一下==，发现①代码缺了个点，或者②描述信息写错了，或者③漏提交文件，而且这个漏了的文件也是想要合并在这次提交里的，可以修改：
 
@@ -115,7 +115,7 @@ git commit -m "暂存区里的东西现在提交上去，这是本次提交的�
 
 ②   git commit --amend -m "新信息"
 
-![image-20251119233603914](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251119233603914.png)
+![image-20251119233603914](images/image-20251119233603914.png)
 
 ③   git add 漏掉的文件 && git commit --amend --no-edit
 
@@ -129,7 +129,7 @@ a. 查看历史（git log只显示提交行为，不记录暂存区的内容）�
 git log --oneline
 ```
 
-![image-20251120000904964](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120000904964.png)
+![image-20251120000904964](images/image-20251120000904964.png)
 
 b. 查看历史版本的文件
 
@@ -157,7 +157,7 @@ git show 596cd52 littleTest/helloGit.py
 git diff c744c63 fintechsys.md
 ```
 
-![image-20251120002018882](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120002018882.png)
+![image-20251120002018882](images/image-20251120002018882.png)
 
 d. 查看文件状态
 
@@ -207,21 +207,21 @@ git checkout -b NAME
 git checkout -b branch01
 ```
 
-![image-20251120021046627](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120021046627.png)
+![image-20251120021046627](images/image-20251120021046627.png)
 
 现在你就在一个新分支上了，任意修改和提交。
 
 比如我py文件里面本来是：
 
-![image-20251120021140359](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120021140359.png)
+![image-20251120021140359](images/image-20251120021140359.png)
 
 现在改成：
 
-![image-20251120021236178](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120021236178.png)
+![image-20251120021236178](images/image-20251120021236178.png)
 
 然后提交
 
-![image-20251120021406314](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120021406314.png)
+![image-20251120021406314](images/image-20251120021406314.png)
 
 回到 master 分支：又能看到原始文件，比如想看helloGit.py
 
@@ -229,7 +229,7 @@ git checkout -b branch01
 git show 596cd52 littleTest/helloGit.py
 ```
 
-![image-20251120022449895](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120022449895.png)
+![image-20251120022449895](images/image-20251120022449895.png)
 
 ##### 6）分支内的回滚、分支的合并、分支的删除
 
@@ -251,7 +251,7 @@ git checkout master
 git merge branch01
 ```
 
-![image-20251120024215091](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120024215091.png)
+![image-20251120024215091](images/image-20251120024215091.png)
 
 变基合并（Rebase + Merge）历史更整洁。效果：提交历史变成一条直线，没有分叉。
 
@@ -271,15 +271,15 @@ c. 删除分支：
 git branch -d branch01
 ```
 
-![image-20251120024245351](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120024245351.png)
+![image-20251120024245351](images/image-20251120024245351.png)
 
-![image-20251120024434362](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120024434362.png)
+![image-20251120024434362](images/image-20251120024434362.png)
 
 #### 4、远程仓库
 
 ##### 1）自我介绍
 
-![image-20251119233909696](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251119233909696.png)
+![image-20251119233909696](images/image-20251119233909696.png)
 
 ##### 2）关联远程仓库
 
@@ -287,7 +287,7 @@ git branch -d branch01
 
 （ADD README 最好ON一下，让人更方便地认识这个仓库，刚刚忘记开了，现在又不知道怎么开。）
 
-![image-20251120004401491](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120004401491.png)
+![image-20251120004401491](images/image-20251120004401491.png)
 
 有了想要的远程仓库，可以开始关联了
 
@@ -299,7 +299,7 @@ git remote add <想把这个远程仓库叫什么名字> <你的远程仓库的�
 git remote add origin https://github.com/xiaodaiameng/fintechsys.git
 ```
 
-![image-20251120025805343](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120025805343.png)
+![image-20251120025805343](images/image-20251120025805343.png)
 
 ##### 3）拉取远程仓库的分支
 
@@ -316,11 +316,11 @@ git pull 远程仓库简称 分支名称
 
 学弟的友情提示：
 
-![image-20251120010705826](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120010705826.png)
+![image-20251120010705826](images/image-20251120010705826.png)
 
 b. 有 fetch，更保险一点。
 
-![image-20251120030652820](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120030652820.png)
+![image-20251120030652820](images/image-20251120030652820.png)
 
 ##### 4）从本地推送到远程仓库
 
@@ -333,8 +333,8 @@ git push <远程仓库简称> <本地分支名>
 git push (-u) origin master
 ```
 
-![image-20251120032256263](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120032256263.png)
+![image-20251120032256263](images/image-20251120032256263.png)
 
 
 
-![image-20251120032441100](C:\Users\ass\AppData\Roaming\Typora\typora-user-images\image-20251120032441100.png)
+![image-20251120032441100](images/image-20251120032441100.png)
