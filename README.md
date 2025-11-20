@@ -338,3 +338,32 @@ git push (-u) origin master
 
 
 ![image-20251120032441100](images/image-20251120032441100.png)
+
+github的仓库默认是main 分支，而git本地仓库默认是master分支，为了减少一些不必要的麻烦，最好全部改成main，因为GitHub默认是main，现在的git版本也默认是main。
+
+所以把本地的名字改一下，
+
+把GitHub已经推过去的这个分支也重命名一下（如果已推），
+
+把本地的以后要init创建仓库时的名字也改成main。
+
+具体实现如下：
+
+git的修改：
+
+```
+# 确保你在要重命名的分支上（比如 master）
+git branch
+
+# 重命名当前分支为 main
+git branch -m master main
+
+# 设置以后新仓库都用 main 作为默认分支
+git config --global init.defaultBranch main
+```
+
+gitHub 的修改：GitHub 网页
+
+看到自己仓库页面左上标签Branches点击进去，新页面再点击 Settings齿轮 ，在 "Default branch" 部分点击分支名旁的 ✏️ 图标，将master重命名为`main` 分支，点击Update确认修改。刷新就是main分支了。
+
+##### 5）记得以后就是main分支了，前面的那些命令都把master替换一下写成main。
